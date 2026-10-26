@@ -1,0 +1,16 @@
+name: Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  build:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build arm64 app
+        run: ./build-app.sh
+      - name: Verify signature
+        run: codesign --verify --deep --strict --verbose=2 dist/SnapMark.app
