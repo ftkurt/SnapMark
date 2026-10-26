@@ -34,6 +34,8 @@ codesign --verify --deep --strict --verbose=2 "$HOME/Applications/SnapMark.app"
 codesign -dvv "$HOME/Applications/SnapMark.app" 2>&1
 ```
 
+To make a locally signed release ZIP, run
+`SNAPMARK_SIGNING_IDENTITY=YOUR_40_CHARACTER_IDENTITY_HASH ./scripts/package-release.sh`.
 The build script signs the completed app bundle. Without
 `SNAPMARK_SIGNING_IDENTITY`, it retains the ad-hoc signing behavior. The
 certificate-backed signature uses macOS's certificate-derived designated
