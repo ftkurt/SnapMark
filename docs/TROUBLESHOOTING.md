@@ -31,10 +31,11 @@ Then reopen the installed app, begin a capture, and grant permission once.
 
 ## macOS says the app cannot be opened
 
-Public releases are ad-hoc signed but not notarized with a paid Apple Developer
-certificate. Right-click `SnapMark.app`, choose **Open**, and confirm. On newer
-macOS versions, use **System Settings → Privacy & Security → Open Anyway**.
-Do not disable Gatekeeper globally.
+Public releases are ad-hoc signed and not notarized. Try opening
+`SnapMark.app` once, then use **System Settings → Privacy & Security → Open
+Anyway**. macOS saves an exception for that app. A self-signed certificate
+does not grant automatic Gatekeeper approval to downloaded apps; see
+[Local signing](LOCAL_SIGNING.md) for what it does provide.
 
 ## The wrong display is saved
 
