@@ -47,10 +47,9 @@ Download `SnapMark-arm64.zip` from the
 [latest release](https://github.com/ftkurt/SnapMark/releases/latest), unzip it,
 and drag `SnapMark.app` to `/Applications`.
 
-Because this free build is not notarized with a paid Apple Developer
-certificate, macOS may block its first launch. Right-click the app and choose
-**Open**, or approve it under **System Settings → Privacy & Security**. Never
-disable Gatekeeper globally.
+These releases are ad-hoc signed and not notarized. If macOS blocks the
+first launch, open **System Settings → Privacy & Security → Open Anyway** after
+trying to launch SnapMark. macOS then saves an exception for that app.
 
 ### Option 2: Install the latest release from Terminal
 
@@ -79,6 +78,9 @@ cd SnapMark
 ```
 
 Use `./install.sh --source --system` to install to `/Applications`.
+For a stable certificate-backed identity on your own Mac, see
+[Local signing](docs/LOCAL_SIGNING.md). A self-signed certificate does not
+make downloaded apps pass Gatekeeper automatically.
 
 ## Usage
 
